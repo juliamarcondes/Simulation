@@ -12,44 +12,76 @@ class slow_machine {
 	state: fixed
 }
 
-fast_count = 4
-slow_count = 3
-all_machines = []
-time = 0
+// main function
+void run_simulations(){
+	// check status of machines
+	check_machines();
+	
+	int units_produced = 0
+	int fast_count = 4
+	int slow_count = 3
+	int machines = []
 
-for (i = 0; i < slow_count; i++){
-	all_machines += slow_machine; // add slow machines to array
+	// add slow machines to array
+	for (i = 0; i < slow_count; i++){
+		machines += slow_machine;
+	}
+
+	// add fast machines to array
+	for (i = 0; i < fast_count; i++){
+		machines += fast_machine;
+	}
+
+	// add code to run simulation here ~
+	
 }
 
-for (i = 0; i < fast_count; i++){
-	all_machines += fast_machine; // add fast machines to array
+void repair_machine(machine_id) {
+	if (machines[machine_id].state = broken){
+		for (i = 0; i < machines[machine_id].repair_time; ++i){
+			// wait until time runs out
+			;
+		}
+	}
 }
 
-
-
-// all_machines = [fast_machine, slow_machine, fast_machine, fast_machine, slow_machine, fast_machine]
-
-// all_machines[1].state = fixed
-
-
-repair_machine(machine_id) {
-	if (all_machines[machine_id].state = broken){
-
-		for (i = 0; i < all_machines[machine_id].repair_time; ++i){
-			
+void check_machines(){
+	// first, check if any machine is broken:
+	for(int i = 0; i < 7; ++i){
+		// check all fast machines
+		if(machines[machine_id].production_rate == 2){
+			// if you encounter a broken fast machine, repair it
+			if((machines[machine_id].state = broken)
+				repair_machine(machine_id);
+		}
+		// check all slow machines
+		if(machines[machine_id].production_rate == 1){
+			// if you encounter a broken slow machine, repair it
+			if((machines[machine_id].state = broken)
+				repair_machine(machine_id);
 		}
 	}
 }
 
 
+// NOTES:
 
-2 variables: when does breakdown happen, how long does repair take
-one repair crew for each class of machine
-simulation over long period of days
-	frequency of extreme events (ex. three days out of year, all systems down)
-
-
+// Examples of  how to refer to machines:
+// machines = [fast_machine, slow_machine, fast_machine, fast_machine, slow_machine, fast_machine]
+// machines[1].state = fixed
 
 
-state_of_machines= [0, 0, 0, 0, 0, 0, 1]
-repair_cost_of_machines = [
+
+// 2 variables: when does breakdown happen, how long does repair take
+// one repair crew for each class of machine
+//
+// simulation over long period of days
+//	frequency of extreme events (ex. three days out of year, all systems down)
+//
+// x = beta * e^((1/alpha)*ln(-ln(u)))
+
+
+
+// Array approach:
+// state_of_machines= [0, 0, 0, 0, 0, 0, 1]
+// repair_cost_of_machines = [
