@@ -1,0 +1,87 @@
+class fast_machine {
+	production_rate: 2
+	repair_time: 2
+	repair_cost: 2
+	state: fixed
+}
+
+class slow_machine {
+	production_rate: 1
+	repair_time: 1
+	repair_cost: 1
+	state: fixed
+}
+
+// main function
+void run_simulations(){
+	// check status of machines
+	check_machines();
+	
+	int units_produced = 0
+	int fast_count = 4
+	int slow_count = 3
+	int machines = []
+
+	// add slow machines to array
+	for (i = 0; i < slow_count; i++){
+		machines += slow_machine;
+	}
+
+	// add fast machines to array
+	for (i = 0; i < fast_count; i++){
+		machines += fast_machine;
+	}
+
+	// add code to run simulation here ~
+	
+}
+
+void repair_machine(machine_id) {
+	if (machines[machine_id].state = broken){
+		for (i = 0; i < machines[machine_id].repair_time; ++i){
+			// wait until time runs out
+			;
+		}
+	}
+}
+
+void check_machines(){
+	// first, check if any machine is broken:
+	for(int i = 0; i < 7; ++i){
+		// check all fast machines
+		if(machines[machine_id].production_rate == 2){
+			// if you encounter a broken fast machine, repair it
+			if((machines[machine_id].state = broken)
+				repair_machine(machine_id);
+		}
+		// check all slow machines
+		if(machines[machine_id].production_rate == 1){
+			// if you encounter a broken slow machine, repair it
+			if((machines[machine_id].state = broken)
+				repair_machine(machine_id);
+		}
+	}
+}
+
+
+// NOTES:
+
+// Examples of  how to refer to machines:
+// machines = [fast_machine, slow_machine, fast_machine, fast_machine, slow_machine, fast_machine]
+// machines[1].state = fixed
+
+
+
+// 2 variables: when does breakdown happen, how long does repair take
+// one repair crew for each class of machine
+//
+// simulation over long period of days
+//	frequency of extreme events (ex. three days out of year, all systems down)
+//
+// x = beta * e^((1/alpha)*ln(-ln(u)))
+
+
+
+// Array approach:
+// state_of_machines= [0, 0, 0, 0, 0, 0, 1]
+// repair_cost_of_machines = [
