@@ -1,0 +1,55 @@
+class fast_machine {
+	production_rate: 2
+	repair_time: 2
+	repair_cost: 2
+	state: fixed
+}
+
+class slow_machine {
+	production_rate: 1
+	repair_time: 1
+	repair_cost: 1
+	state: fixed
+}
+
+fast_count = 4
+slow_count = 3
+all_machines = []
+time = 0
+
+for (i = 0; i < slow_count; i++){
+	all_machines += slow_machine; // add slow machines to array
+}
+
+for (i = 0; i < fast_count; i++){
+	all_machines += fast_machine; // add fast machines to array
+}
+
+
+
+// all_machines = [fast_machine, slow_machine, fast_machine, fast_machine, slow_machine, fast_machine]
+
+// all_machines[1].state = fixed
+
+
+repair_machine(machine_id) {
+	if (all_machines[machine_id].state = broken){
+
+		for (i = 0; i < all_machines[machine_id].repair_time; ++i){
+			
+		}
+	}
+}
+
+
+
+2 variables: when does breakdown happen, how long does repair take
+one repair crew for each class of machine
+simulation over long period of days
+	frequency of extreme events (ex. three days out of year, all systems down)
+
+
+
+
+state_of_machines= [0, 0, 0, 0, 0, 0, 1]
+repair_cost_of_machines = [
